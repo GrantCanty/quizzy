@@ -17,13 +17,12 @@ QuizQuestion::QuizQuestion(int num) {
     //std::cout << "int num: " << num << std::endl;
 }
 
-void QuizQuestion::getQuestion(std::ostream& outs) const {
-    //return question;
+void QuizQuestion::showQuestion(std::ostream& outs) const {
     outs << question << std::endl;
 }
 
-void QuizQuestion::getAnswers(std::ostream& outs) {
-    //return answers;
+void QuizQuestion::showAnswers(std::ostream& outs) {
+    answers->showAnswers(outs);
 }
 
 void QuizQuestion::setQuestion(std::string q) {

@@ -27,10 +27,10 @@ TrueOrFalse::TrueOrFalse() {
     answers[1] = AnswerData('F', Boolean(false));
 }
 
-void TrueOrFalse::getAnswers(std::ostream& outs) {
-    /*for (int i = 0; i < answers.length(); i++) {
-        outs << i << std::endl;
-    }*/
+void TrueOrFalse::showAnswers(std::ostream& outs) {
+    for (int i = 0; i < 2; i++) {
+        outs << answers[i].getAnswer() << std::endl;
+    }
 }
 
 void TrueOrFalse::setAnswers() {
@@ -53,10 +53,15 @@ void TrueOrFalse::setAnswers() {
 
 MultipleChoice::MultipleChoice() {
     answers.push_back(AnswerData('A', Boolean(false)));
+    answers.push_back(AnswerData('B', Boolean(false)));
+    answers.push_back(AnswerData('C', Boolean(false)));
+    answers.push_back(AnswerData('D', Boolean(false)));
 }
 
-void MultipleChoice::getAnswers(std::ostream& outs) {
-
+void MultipleChoice::showAnswers(std::ostream& outs) {
+    for(int i = 0; i < answers.size(); i++) {
+        answers[i].getAnswer();
+    }
 }
 
 void MultipleChoice::setAnswers() {
@@ -67,7 +72,7 @@ MatchAnswers::MatchAnswers() {
     answers.push_back(AnswerData('A', Match()));
 }
 
-void MatchAnswers::getAnswers(std::ostream& outs) {
+void MatchAnswers::showAnswers(std::ostream& outs) {
 
 }
 

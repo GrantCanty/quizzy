@@ -10,7 +10,8 @@ void Quiz::showAllQuestions(std::ostream& outs) {
     for (int i = 0; i < questions.size(); i++) {
         //std::cout << questions[i].getQuestion() << std::endl;
         std::cout << "i: " << i << std::endl;
-        questions[i].getQuestion(outs);
+        questions[i].showQuestion(outs);
+        questions[i].showAnswers(outs);
         //questions[i].
     }
 }

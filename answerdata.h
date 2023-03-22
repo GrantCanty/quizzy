@@ -50,8 +50,4 @@ class AnswerData {
         SecondaryAnswer answerDetails;
 };
 
-// ------- ------------- ------
-
-
-
 #endif
