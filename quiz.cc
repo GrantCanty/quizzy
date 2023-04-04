@@ -41,10 +41,10 @@ int Quiz::getMenu() {
     int choice;
 
     std::cout << std::endl;
-    std::cout << "1) Create True/False question" << std::endl;
-    std::cout << "2) Create Mutliple Choice question" << std::endl;
-    std::cout << "3) Create Matching question" << std::endl;
-    std::cout << "0) Quit" << std::endl;
+    std::cout << "1) Add True/False question" << std::endl;
+    std::cout << "2) Add Mutliple Choice question" << std::endl;
+    std::cout << "3) Add Matching question" << std::endl;
+    std::cout << "0) Back" << std::endl;
 
     std::cin >> choice;
     if (std::cin.fail()) { //if cin fails, reset and give error message

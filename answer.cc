@@ -38,11 +38,25 @@ void TrueOrFalse::setAnswers() {
     answers[0].setOption('T');
     answers[1].setOption('F');
 
-    std::cout << "Is this answer true or false? (t/f) ";
-    
-    /*do {
-        // cin in get if question is t or false
-    } while(false);*/
+    std::string choice;
+    while(true) {
+        std::cout << "Is this answer true or false? (t/f) ";
+        std::cin >> choice;
+
+        for (int i = 0; i < choice.length(); i++) {
+            choice[i] = tolower(choice[i]);
+        }
+        
+        if (choice != "t" && choice != "f") { //if cin fails, reset and give error message
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Error. char not entered. Please try again" << std::endl;
+        }
+        else {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            break;
+        }
+    }
 
     // if statement to init true and false answers based on cin data
     answers[0].setAnswerDetails(Boolean(true));
