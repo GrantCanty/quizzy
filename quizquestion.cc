@@ -76,7 +76,7 @@ int QuizQuestion::setAnswersMenu() {
 void QuizQuestion::getMenu() {
     std::string q;
     
-    std::cout << "Enter question" << std::endl;
+    std::cout << std::endl << "Enter question" << std::endl;
     
     std::cin.ignore(100, '\n');
     std::getline(std::cin, q);

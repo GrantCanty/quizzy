@@ -8,10 +8,9 @@ AnswerData::AnswerData() {
     answerDetails = SecondaryAnswer();
 }
 
-AnswerData::AnswerData(char newOption, SecondaryAnswer newAnswer) {
+AnswerData::AnswerData(char newOption, SecondaryAnswer newSecAnswer) {
     option = newOption;
-    answer = "Test";
-    answerDetails = newAnswer;
+    answerDetails = newSecAnswer;
 }
 
 char AnswerData::getOption() const {

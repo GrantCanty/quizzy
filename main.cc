@@ -13,6 +13,7 @@ int menu() {
     std::cout << "Enter a number to choose the following options" << std::endl;
     std::cout << "1) Add questions" << std::endl;
     std::cout << "2) View all questions" << std::endl;
+    std::cout << "3) Output all quiz question to a file" << std::endl;
     std::cout << "0) Quit" << std::endl;
 
     std::cin >> choice;
@@ -41,6 +42,8 @@ int main() {
             case 2:
                 quiz.showAllQuestions(std::cout);
                 break;
+            case 3:
+                quiz.outputAllQuestions(ofs);
         }
     } while(choice != 0);
     

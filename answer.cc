@@ -29,15 +29,14 @@ TrueOrFalse::TrueOrFalse() {
 
 void TrueOrFalse::showAnswers(std::ostream& outs) {
     for (int i = 0; i < 2; i++) {
-        outs << answers[i].getAnswer() << std::endl;
+        outs << answers[i].getOption() << ": " << answers[i].getAnswer() << std::endl;
     }
 }
 
 void TrueOrFalse::setAnswers() {
-    Boolean b;
-    answers[0].setOption('T');
-    answers[1].setOption('F');
-
+    answers[0].setAnswer("True");
+    answers[1].setAnswer("False");
+    
     std::string choice;
     while(true) {
         std::cout << "Is this answer true or false? (t/f) ";
@@ -47,7 +46,7 @@ void TrueOrFalse::setAnswers() {
             choice[i] = tolower(choice[i]);
         }
         
-        if (choice != "t" && choice != "f") { //if cin fails, reset and give error message
+        if (choice != "t" && choice != "f") { //neither t nor f, reset and give error message
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Error. char not entered. Please try again" << std::endl;
@@ -59,8 +58,14 @@ void TrueOrFalse::setAnswers() {
     }
 
     // if statement to init true and false answers based on cin data
-    answers[0].setAnswerDetails(Boolean(true));
-    answers[1].setAnswerDetails(Boolean(false));
+    if (choice == "t") {
+        answers[0].setAnswerDetails(Boolean(true));
+        answers[1].setAnswerDetails(Boolean(false));
+    }
+    else {
+        answers[0].setAnswerDetails(Boolean(false));
+        answers[1].setAnswerDetails(Boolean(true));
+    }
 
 
 }
@@ -74,12 +79,58 @@ MultipleChoice::MultipleChoice() {
 
 void MultipleChoice::showAnswers(std::ostream& outs) {
     for(int i = 0; i < answers.size(); i++) {
-        answers[i].getAnswer();
+        outs << answers[i].getOption() << ":" << answers[i].getAnswer() << std::endl;
     }
 }
 
 void MultipleChoice::setAnswers() {
-    std::cout << "set answers for MultipleChoice class has been called" << std::endl;
+    std::string answer;
+    for (int i = 0; i < answers.size(); i++) {
+        std::cout << "Enter answer for question " << answers[i].getOption() << ": ";
+        std::getline(std::cin, answer);
+        answers[i].setAnswer(answer);
+    }
+    
+    char finalChoice;
+    std::string choice;
+    while(true) {
+        std::cout << "Which answer is true? (a,b,c,d) ";
+        std::cin >> choice;
+
+        for (int i = 0; i < choice.length(); i++) {
+            choice[i] = tolower(choice[i]);
+        }
+        
+        if (choice != "a" && choice != "b" && choice != "c" && choice != "d") { //neither t nor f, reset and give error message
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Error. char not entered. Please try again" << std::endl;
+        }
+        else {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            finalChoice = choice[0];
+            break;
+        }
+    }
+
+    switch (finalChoice)
+    {
+    case 'a':
+        answers[0].setAnswerDetails(Boolean(true));
+        break;
+    case 'b':
+        answers[1].setAnswerDetails(Boolean(true));
+        break;
+    case 'c':
+        answers[2].setAnswerDetails(Boolean(true));
+        break;
+    case 'd':
+        answers[3].setAnswerDetails(Boolean(true));
+        break;
+    default:
+        break;
+    }
+
 }
 
 MatchAnswers::MatchAnswers() {

@@ -5,7 +5,6 @@
 
 class SecondaryAnswer {
     public:
-        //SecondaryAnswer * Create(int num);
 };
 
 class Boolean:public SecondaryAnswer {
@@ -34,7 +33,7 @@ class Match:public SecondaryAnswer {
 class AnswerData {
     public:
         AnswerData();
-        AnswerData(char newOption, SecondaryAnswer newAnswer);
+        AnswerData(char newOption, SecondaryAnswer newSecAnswer);
         
         char getOption() const;
         std::string getAnswer() const;

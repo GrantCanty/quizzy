@@ -8,8 +8,7 @@
 
 void Quiz::showAllQuestions(std::ostream& outs) {
     for (int i = 0; i < questions.size(); i++) {
-        //std::cout << questions[i].getQuestion() << std::endl;
-        std::cout << "i: " << i << std::endl;
+        outs << std::endl;
         questions[i].showQuestion(outs);
         questions[i].showAnswers(outs);
         //questions[i].
@@ -29,6 +28,8 @@ void Quiz::setQuestions() {
                 break;
             case 2: // multiple choice
                 questions.push_back(QuizQuestion(2));
+                questions[questions.size()-1].getMenu();
+                questions[questions.size()-1].setAnswers(choice);
                 break;
             case 3: // matching
                 questions.push_back(QuizQuestion(3));
