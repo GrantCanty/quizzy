@@ -38,6 +38,8 @@ void Quiz::setQuestions() {
                 break;
             case 3: // matching
                 questions.push_back(QuizQuestion(3));
+                questions[questions.size()-1].getMenu();
+                questions[questions.size()-1].setAnswers(choice);
                 break;
         }
     } while (choice != 0);

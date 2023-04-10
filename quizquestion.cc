@@ -43,19 +43,19 @@ void QuizQuestion::setAnswers(int choice) {
                 mc = new MultipleChoice();
                 
                 answers = mc;
-                mc->setAnswers();
+                answers->setAnswers();
                 break;
             case 3:
                 Text *tx;
                 tx = new Text();
                 
                 answers = tx;
-                tx->setAnswers();
+                answers->setAnswers();
                 break;
         }
 }
 
-int QuizQuestion::setAnswersMenu() {
+/*int QuizQuestion::setAnswersMenu() {
     int choice;
 
     std::cout << std::endl;
@@ -71,7 +71,7 @@ int QuizQuestion::setAnswersMenu() {
         std::cin.ignore(100, '\n');
     }
     return choice;
-}
+}*/
 
 void QuizQuestion::getMenu() {
     std::string q;

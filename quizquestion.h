@@ -19,7 +19,7 @@ class QuizQuestion {
 
         void setQuestion(std::string q);
         void setAnswers(int choice);
-        int setAnswersMenu();
+        //int setAnswersMenu();
 
         void getMenu();
     

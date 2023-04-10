@@ -138,9 +138,11 @@ Text::Text() {
 }
 
 void Text::showAnswers(std::ostream& outs) {
-
+    outs << answers << std::endl;
 }
 
 void Text::setAnswers() {
-    std::cout << "set answers for MatchAnswers class has been called" << std::endl;
+    std::cout << "Enter answer" << std::endl;
+    std::string answer;
+    std::getline(std::cin, answer);
 }
