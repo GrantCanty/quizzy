@@ -9,10 +9,15 @@
 void Quiz::showAllQuestions(std::ostream& outs) {
     for (int i = 0; i < questions.size(); i++) {
         outs << std::endl;
+        outs << i+1 << ": ";
         questions[i].showQuestion(outs);
         questions[i].showAnswers(outs);
         //questions[i].
     }
+}
+
+void Quiz::outputAllQuestions(std::ofstream& ofs) {
+
 }
 
 void Quiz::setQuestions() {
@@ -44,7 +49,7 @@ int Quiz::getMenu() {
     std::cout << std::endl;
     std::cout << "1) Add True/False question" << std::endl;
     std::cout << "2) Add Mutliple Choice question" << std::endl;
-    std::cout << "3) Add Matching question" << std::endl;
+    std::cout << "3) Add Text description question" << std::endl;
     std::cout << "0) Back" << std::endl;
 
     std::cin >> choice;

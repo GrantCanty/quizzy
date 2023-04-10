@@ -32,14 +32,14 @@ class MultipleChoice:public Answer {
         std::vector<AnswerData> answers;
 };
 
-class MatchAnswers:public Answer {
+class Text:public Answer {
     public:
-        MatchAnswers();
+        Text();
         void showAnswers(std::ostream& outs) override;
         void setAnswers() override;
 
     private:
-        std::vector<AnswerData> answers;
+        std::string answers;
 };
 
 #endif

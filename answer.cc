@@ -13,7 +13,7 @@ Answer * Answer::Create(int num) {
             p = new MultipleChoice();
             break;
         case 3:
-            p = new MatchAnswers();
+            p = new Text();
             break;
         default:
             p = NULL;
@@ -133,14 +133,14 @@ void MultipleChoice::setAnswers() {
 
 }
 
-MatchAnswers::MatchAnswers() {
-    answers.push_back(AnswerData('A', Match()));
+Text::Text() {
+    answers = "";
 }
 
-void MatchAnswers::showAnswers(std::ostream& outs) {
+void Text::showAnswers(std::ostream& outs) {
 
 }
 
-void MatchAnswers::setAnswers() {
+void Text::setAnswers() {
     std::cout << "set answers for MatchAnswers class has been called" << std::endl;
 }

@@ -32,10 +32,10 @@ void QuizQuestion::setQuestion(std::string q) {
 void QuizQuestion::setAnswers(int choice) {
         switch(choice) {
             case 1:
-                TrueOrFalse *t;
-                t = new TrueOrFalse();
+                TrueOrFalse *tf;
+                tf = new TrueOrFalse();
                 
-                answers = t;
+                answers = tf;
                 answers->setAnswers();
                 break;
             case 2:
@@ -46,11 +46,11 @@ void QuizQuestion::setAnswers(int choice) {
                 mc->setAnswers();
                 break;
             case 3:
-                MatchAnswers *ma;
-                ma = new MatchAnswers();
+                Text *tx;
+                tx = new Text();
                 
-                answers = ma;
-                ma->setAnswers();
+                answers = tx;
+                tx->setAnswers();
                 break;
         }
 }
