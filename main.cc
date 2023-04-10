@@ -43,7 +43,26 @@ int main() {
                 quiz.showAllQuestions(std::cout);
                 break;
             case 3:
-                quiz.outputAllQuestions(ofs);
+                while(true) {
+                    std::string fileName;
+                    
+                    std::cout << "Enter file name (do not add an extension): ";
+                    
+                    std::cin.ignore();
+                    std::getline(std::cin, fileName);
+                    
+                    fileName = fileName + ".txt";
+                    
+                    ofs.open(fileName.c_str());
+                    if(ofs.fail()) {
+                        std::cout << "Error with file name. Try new file name" << std::endl;
+                    }
+                    else {
+                        quiz.showAllQuestions(ofs);
+                        break;
+                    }
+                }
+                break;
         }
     } while(choice != 0);
     

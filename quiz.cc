@@ -16,9 +16,8 @@ void Quiz::showAllQuestions(std::ostream& outs) {
     }
 }
 
-void Quiz::outputAllQuestions(std::ofstream& ofs) {
-
-}
+/*void Quiz::outputAllQuestions(std::ofstream& ofs) {
+}*/
 
 void Quiz::setQuestions() {
     int choice;
@@ -59,7 +58,7 @@ int Quiz::getMenu() {
         std::cout << "Error. Integer not entered.";
         std::cin.clear();
         std::cin.ignore(256, '\n');
-        std::cin.ignore(100, '\n');
+        //std::cin.ignore(100, '\n');
     }
     return choice; 
 }

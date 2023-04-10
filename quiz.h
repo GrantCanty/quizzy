@@ -10,7 +10,7 @@
 class Quiz {
     public:
         void showAllQuestions(std::ostream& outs);
-        void outputAllQuestions(std::ofstream& ofs);
+        //void outputAllQuestions(std::ofstream& ofs);
         void setQuestions();
         int getMenu();
 
