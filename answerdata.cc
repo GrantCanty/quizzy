@@ -5,10 +5,10 @@
 AnswerData::AnswerData() {
     option = 'A';
     answer = "Test";
-    answerDetails = SecondaryAnswer();
+    answerDetails = Boolean();
 }
 
-AnswerData::AnswerData(char newOption, SecondaryAnswer newSecAnswer) {
+AnswerData::AnswerData(char newOption, Boolean newSecAnswer) {
     option = newOption;
     answerDetails = newSecAnswer;
 }
@@ -21,7 +21,7 @@ std::string AnswerData::getAnswer() const {
     return answer;
 }
 
-SecondaryAnswer AnswerData::getAnswerDetails() const {
+Boolean AnswerData::getAnswerDetails() const {
     return answerDetails;
 }
 
@@ -33,7 +33,7 @@ void AnswerData::setAnswer(std::string newAnswer) {
     answer = newAnswer;
 }
 
-void AnswerData::setAnswerDetails(SecondaryAnswer newDetails) {
+void AnswerData::setAnswerDetails(Boolean newDetails) {
     answerDetails = newDetails;
 }
 

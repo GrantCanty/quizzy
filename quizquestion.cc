@@ -21,8 +21,12 @@ void QuizQuestion::showQuestion(std::ostream& outs) const {
     outs << question << std::endl;
 }
 
-void QuizQuestion::showAnswers(std::ostream& outs) {
+void QuizQuestion::showAnswers(std::ostream& outs) const {
     answers->showAnswers(outs);
+}
+
+void QuizQuestion::showCorrectAnswer(std::ostream& outs) const {
+    answers->showCorrectAnswer(outs);
 }
 
 void QuizQuestion::setQuestion(std::string q) {

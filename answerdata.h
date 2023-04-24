@@ -3,23 +3,20 @@
 
 #include <string>
 
-class SecondaryAnswer {
+class Boolean {
     public:
-};
-
-class Boolean:public SecondaryAnswer {
-    public:
-        Boolean() { answer = false; }
-        Boolean(bool b) { answer = b; }
+        Boolean() { isCorrectAnswer = false; }
+        Boolean(bool b) { isCorrectAnswer = b; }
+        bool isCorrect() { return isCorrectAnswer; }
     private:
-        bool answer;
+        bool isCorrectAnswer;
 };
 
-class Match:public SecondaryAnswer {
+/*class Match:public AnswerDetails {
     public:
         Match() { 
-            option = 'E'; 
-            answer = "Test"; 
+            option = ' '; 
+            answer = " "; 
             }
         Match(char c, std::string s) {
             option = c;
@@ -28,25 +25,26 @@ class Match:public SecondaryAnswer {
     private:
         char option;
         std::string answer;
-};
+};*/
 
 class AnswerData {
     public:
         AnswerData();
-        AnswerData(char newOption, SecondaryAnswer newSecAnswer);
+        AnswerData(char newOption, Boolean newSecAnswer);
         
         char getOption() const;
         std::string getAnswer() const;
-        SecondaryAnswer getAnswerDetails() const;
+        Boolean getAnswerDetails() const;
+
         
         void setOption(char newOption);
         void setAnswer(std::string newAnswer);
-        void setAnswerDetails(SecondaryAnswer newDetails);
+        void setAnswerDetails(Boolean newDetails);
     
     private:
         char option;
         std::string answer;
-        SecondaryAnswer answerDetails;
+        Boolean answerDetails;
 };
 
 #endif

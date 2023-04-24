@@ -13,7 +13,8 @@ int menu() {
     std::cout << "Enter a number to choose the following options" << std::endl;
     std::cout << "1) Add questions" << std::endl;
     std::cout << "2) View all questions" << std::endl;
-    std::cout << "3) Output all quiz question to a file" << std::endl;
+    std::cout << "3) Output all quiz questions to a file" << std::endl;
+    std::cout << "4) Output all quiz questions and answers to a file" << std::endl;
     std::cout << "0) Quit" << std::endl;
 
     std::cin >> choice;
@@ -63,6 +64,27 @@ int main() {
                     }
                 }
                 break;
+            case 4:
+                while(true) {
+                    std::string fileName;
+                    
+                    std::cout << "Enter file name (do not add an extension): ";
+                    
+                    std::cin.ignore();
+                    std::getline(std::cin, fileName);
+                    
+                    fileName = fileName + ".txt";
+
+                    ofs.open(fileName.c_str());
+                    if(ofs.fail()) {
+                        std::cout << "Error with file name. Try new file name" << std::endl;
+                    }
+                    else {
+                        quiz.showAllQuestionsAndAnswers(ofs);
+                        break;
+                    }
+
+                }
         }
     } while(choice != 0);
     

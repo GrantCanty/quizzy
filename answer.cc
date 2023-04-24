@@ -33,6 +33,14 @@ void TrueOrFalse::showAnswers(std::ostream& outs) {
     }
 }
 
+void TrueOrFalse::showCorrectAnswer(std::ostream& outs) {
+    for (int i = 0; i < 2; i++) {
+        if(answers[i].getAnswerDetails().isCorrect()) {
+            outs << "Correct answer is: " << answers[i].getOption() << std::endl;
+        }
+    }
+}
+
 void TrueOrFalse::setAnswers() {
     answers[0].setAnswer("True");
     answers[1].setAnswer("False");
@@ -79,7 +87,15 @@ MultipleChoice::MultipleChoice() {
 
 void MultipleChoice::showAnswers(std::ostream& outs) {
     for(int i = 0; i < answers.size(); i++) {
-        outs << answers[i].getOption() << ":" << answers[i].getAnswer() << std::endl;
+        outs << answers[i].getOption() << ": " << answers[i].getAnswer() << std::endl;
+    }
+}
+
+void MultipleChoice::showCorrectAnswer(std::ostream& outs) {
+    for (int i = 0; i < answers.size(); i++) {
+        if(answers[i].getAnswerDetails().isCorrect()) {
+            outs << "Correct answer is: " << answers[i].getOption() << std::endl;
+        }
     }
 }
 
@@ -138,7 +154,11 @@ Text::Text() {
 }
 
 void Text::showAnswers(std::ostream& outs) {
-    outs << answers << std::endl;
+    outs << "write answer here" << std::endl << std::endl;
+}
+
+void Text::showCorrectAnswer(std::ostream& outs) {
+    outs << "Correct answer is: " << answers << std::endl;
 }
 
 void Text::setAnswers() {

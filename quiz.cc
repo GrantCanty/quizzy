@@ -16,6 +16,17 @@ void Quiz::showAllQuestions(std::ostream& outs) {
     }
 }
 
+void Quiz::showAllQuestionsAndAnswers(std::ostream& outs) {
+    for (int i = 0; i < questions.size(); i++) {
+        outs << std::endl;
+        outs << i+1 << ": ";
+        questions[i].showQuestion(outs);
+        questions[i].showAnswers(outs);
+        questions[i].showCorrectAnswer(outs);
+        //questions[i]
+    }
+}
+
 /*void Quiz::outputAllQuestions(std::ofstream& ofs) {
 }*/
 

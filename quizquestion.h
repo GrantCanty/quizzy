@@ -15,7 +15,8 @@ class QuizQuestion {
         QuizQuestion(int num);
         
         void showQuestion(std::ostream& outs) const;
-        void showAnswers(std::ostream& outs);
+        void showAnswers(std::ostream& outs) const;
+        void showCorrectAnswer(std::ostream& outs) const;
 
         void setQuestion(std::string q);
         void setAnswers(int choice);

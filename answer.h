@@ -9,6 +9,7 @@ class Answer {
     public:
         static Answer * Create(int num);
         virtual void showAnswers(std::ostream& outs) = 0;
+        virtual void showCorrectAnswer(std::ostream& outs) = 0;
         virtual void setAnswers() = 0;
 };
 
@@ -16,6 +17,7 @@ class TrueOrFalse:public Answer {
     public:
         TrueOrFalse();
         void showAnswers(std::ostream& outs) override;
+        void showCorrectAnswer(std::ostream& outs) override;
         void setAnswers() override;
     
     private:
@@ -26,6 +28,7 @@ class MultipleChoice:public Answer {
     public:
         MultipleChoice();
         void showAnswers(std::ostream& outs) override;
+        void showCorrectAnswer(std::ostream& outs) override;
         void setAnswers() override;
 
     private:
@@ -36,6 +39,7 @@ class Text:public Answer {
     public:
         Text();
         void showAnswers(std::ostream& outs) override;
+        void showCorrectAnswer(std::ostream& outs) override;
         void setAnswers() override;
 
     private:
